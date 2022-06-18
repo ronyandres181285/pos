@@ -9,7 +9,7 @@ public class FrmPrincipal extends JFrame
 
 
 	private static final long serialVersionUID = 1L;
-
+	private JPanel contenedor;
 	public static void main(String[] args) 
 	{
 		new FrmPrincipal();
@@ -25,7 +25,9 @@ public class FrmPrincipal extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("POS    LOGIN");
 		
-		
+		contenedor=new JPanel();
+		contenedor.setBackground(Color.black);
+		add(contenedor);
 		setVisible(true);
 		
 	}
