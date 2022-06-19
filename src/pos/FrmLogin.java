@@ -44,12 +44,13 @@ public class FrmLogin extends JFrame
 		contenedor.setLayout(null);
 		add(contenedor);
 		
-		JLabel lblUsuario=new JLabel("Código");
+		JLabel lblUsuario=new JLabel("Usuario");
 		lblUsuario.setBounds(170,20,100,20);
 		contenedor.add(lblUsuario);
 		
 		txtUsuario= new JTextField();
 		txtUsuario.setBounds(260,20,150,20);
+		txtUsuario.addActionListener(new Eventos());
 		contenedor.add(txtUsuario);
 		
 		JLabel lblContrasena=new JLabel("Contraseña");
@@ -58,6 +59,7 @@ public class FrmLogin extends JFrame
 		
 		txtContrasena=new JPasswordField();
 		txtContrasena.setBounds(260,50,150,20);
+		txtContrasena.addActionListener(new Eventos());
 		contenedor.add(txtContrasena);
 		
 		chbMantenerSesion=new JCheckBox("Mantener la sesión iniciada");
@@ -75,13 +77,13 @@ public class FrmLogin extends JFrame
 	private class Eventos implements ActionListener
 	{
 		
-		char[] pass = {'1','2','3','4','5'};
+		
 		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
 			if(e.getSource()==btnIngresar)
 			{
-				if(txtUsuario.getText().equals("Admin"))
+				if(txtUsuario.getText().equals("Admin") && String.valueOf(txtContrasena.getPassword()).equals("12345"))
 				{
 					
 					new FrmPrincipal();
@@ -95,12 +97,13 @@ public class FrmLogin extends JFrame
 			}
 			else if(e.getSource()==txtUsuario)
 			{
-				
+				txtContrasena.requestFocus();
 			}
 			else {
-				
+				btnIngresar.requestFocus();		
 			}
 		}
 		
 	}
-}
+}			
+
