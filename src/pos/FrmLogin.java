@@ -39,6 +39,7 @@ public class FrmLogin extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("POS                 INGRESO DE USUARIO");
 		setResizable(false);
+		setUndecored(false);
 		
 		contenedor=new JPanel();
 		contenedor.setLayout(null);
